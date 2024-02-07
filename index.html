@@ -13,6 +13,7 @@
 </head>
 <body>
     <nav>
+        <div class="logo">PassX</div>
         <ul>
             <li>Home</li>
             <li>About</li>
@@ -21,8 +22,45 @@
     </nav>
     <div class="container">
         <h1>Password Manager</h1>
+        Welcome to our secure haven for your passwords! Explore our trusted password manager and safeguard your digital world effortlessly. Feel free to reach out if you have any questions or need assistance along the way. Happy password managing!
         <h2>Your Passwords</h2>
+        <table>
+            <tr>
+                <th>Website</th>
+                <th>Username</th>
+                <th>Password</th>
+                <th>Action</th>
+            </tr>
+            <tr>
+                <td>Harry</td>
+                <td>100</td>
+                <td>100</td>
+                <td>100</td>
+            </tr>
+            <tr>
+                <td>Harry</td>
+                <td>100</td>
+                <td>100</td>
+                <td>100</td>
+            </tr>
+        </table>
         <h2>Add a password</h2>
+        <form action="/submit" method="post">
+
+            <!-- Text input for username -->
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+            <br><br>
+        
+            <!-- Password input -->
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+            <br><br>
+        
+            <!-- Submit button -->
+            <button type="submit">submit</button>
+        </form>
     </div>    
+    <script src="script.js"></script>
 </body>
 </html>
