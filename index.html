@@ -23,7 +23,7 @@
     <div class="container">
         <h1>Password Manager</h1>
         Welcome to our secure haven for your passwords! Explore our trusted password manager and safeguard your digital world effortlessly. Feel free to reach out if you have any questions or need assistance along the way. Happy password managing!
-        <h2>Your Passwords</h2>
+        <h2>Your Passwords <span id="alert">Copied</span></h2>
         <table>
             <tr>
                 <th>Website</th>
@@ -31,21 +31,14 @@
                 <th>Password</th>
                 <th>Action</th>
             </tr>
-            <tr>
-                <td>Harry</td>
-                <td>100</td>
-                <td>100</td>
-                <td>100</td>
-            </tr>
-            <tr>
-                <td>Harry</td>
-                <td>100</td>
-                <td>100</td>
-                <td>100</td>
-            </tr>
         </table>
         <h2>Add a password</h2>
         <form action="/submit" method="post">
+
+            <!-- Text input for website -->
+            <label for="website">Website:</label>
+            <input type="text" id="website" name="website" required>
+            <br><br>
 
             <!-- Text input for username -->
             <label for="username">Username:</label>
@@ -61,6 +54,31 @@
             <button type="submit">submit</button>
         </form>
     </div>    
-    <script src="script.js"></script>
+    <script src="script.js">
+        // Accessing form input elements
+const websiteInput = document.getElementById("website");
+const usernameInput = document.getElementById("username");
+const passwordInput = document.getElementById("password");
+
+// Event listener for form submission
+document.querySelector("button[type='submit']").addEventListener("click", (e) => {
+    e.preventDefault(); // Prevent default form submission behavior
+
+    // Retrieve form input values
+    const website = websiteInput.value;
+    const username = usernameInput.value;
+    const password = passwordInput.value;
+
+    // Rest of your code for saving passwords to localStorage and updating UI
+    // Make sure to define showPasswords() and other related functions before this point
+    // ...
+
+    // Clear form inputs after submission
+    websiteInput.value = "";
+    usernameInput.value = "";
+    passwordInput.value = "";
+});
+
+    </script>
 </body>
 </html>
